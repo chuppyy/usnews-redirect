@@ -7,14 +7,14 @@ import { domain } from "../domain";
 
 export async function getServerSideProps(context: any) {
   const userAgent = context.req.headers["user-agent"];
-  /*if (!userAgent?.includes("facebook")) {
+  if (!userAgent?.includes("facebook")) {
     return {
       redirect: {
         permanent: false,
         destination: domain + "/" + context.params.slug.slice(1),
       },
     };
-  }*/
+  }
       const slug = context.params?.slug;
     const {data} = await fetch(`${process.env.APP_API}/News/news-detailbasic?id=${slug?.slice(slug?.lastIndexOf("-") + 1)}`).then((res) => res.json());
 
