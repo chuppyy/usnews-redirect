@@ -15,7 +15,10 @@ export async function getServerSideProps(context: any) {
       },
     };
   }*/
-  const data = await fetchMeta(domain + "/" + context.params.slug.slice(1), {cache: 'no-cache'});
+  const data = await fetchMeta(domain + "/" + context.params.slug.slice(1), {cache: 'no-cache', headers: {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)...",
+    "Accept-Language": "en-US,en;q=0.9"
+  }});
   console.log(context.params.slug, data)
   return {
     props: data,
