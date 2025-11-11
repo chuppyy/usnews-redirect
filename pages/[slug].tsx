@@ -28,7 +28,7 @@ export default function App({ name, avatarLink }: any) {
   return (
     <>
       <Head>       
-      <title>{title}</title>
+      <title>{name}</title>
         <meta name="og:title" content={name} />
         <meta name="og:description" content={name} />
         <meta name="og:image" content={avatarLink} />
